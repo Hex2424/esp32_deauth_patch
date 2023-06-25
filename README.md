@@ -5,7 +5,7 @@ ESP32 chips do have a new function esp_wifi_80211_tx(), which is used to send ro
 # Problem
 They made a function to filter frames that may be illegal to send like deauthentification or dissociation frames, sadly this filter sits inside their precompiled library and can't be modified in c code and I saw many guys reporting all this over forums that c0 frame not working.
 ```
-E (1084305) wifi:unssuported frame type: 0c0
+E (1084305) wifi:unsupport frame type: 0c0
 ```
 # Solution
 Spent several hours analyzing decompiled library which is libnet80211.a
