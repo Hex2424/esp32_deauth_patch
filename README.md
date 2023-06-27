@@ -26,7 +26,7 @@ Still left check for length **(length >= 24)**
 # How to setup
 1. Download **'libnet80211.a'** from this repo (current one compiled using **ESP-IDF v5.2**)
 2. Copy to folder **$your_esp_location/esp/esp-idf/components/esp_wifi/lib/esp32/** and replace older one
-3. Try compile your project now, **if it not compiling, you can try manually inject ieee80211_output.o to your existing libnet80211.a** (previous one)
+3. Try compile your project now, **if it not compiling, you can try manually inject ieee80211_output.o to your existing libnet80211.a**
 4. In that case download **'ieee80211_output.o'** from this repo
 5. Copy to folder **$your_esp_location/esp/esp-idf/components/esp_wifi/lib/esp32/**
 6. Run Following commands
