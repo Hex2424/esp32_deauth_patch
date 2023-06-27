@@ -1,4 +1,4 @@
-## ESP32_D0WD_Q6 Patch ESP-IDF v5.2 in LINUX (UBUNTU)
+## ESP32_D0WD_Q6 Deauth frame patch ESP-IDF v5.2 in LINUX (UBUNTU)
 # Introduction
 ESP32 chips do have a new function **esp_wifi_80211_tx()** which is used to send router raw frames.
 
@@ -12,12 +12,12 @@ I saw many guys reporting all this over forums that **'c0' deauth frame not work
 E (1084305) wifi:unsupport frame type: 0c0
 ```
 # Solution
-Spent several hours analyzing decompiled library which is **libnet80211.a**
+Spent several hours analyzing decompiled library which is **'libnet80211.a'**
 
 Library has several object files merged together
 
 Function **esp_wifi_80211_tx()** sits inside :
-**libnet80211.a -> ieee80211_output.o**
+**'libnet80211.a' -> 'ieee80211_output.o'**
 
 I disassembled and edited some registers inside **'ieee80211_output.o'** object file so that **sanity check function result will be ignored and you can now send any packet.**
 
@@ -26,7 +26,7 @@ Still left check for length **(length >= 24)**
 # How to setup
 1. Download **'libnet80211.a'** from this repo (current one compiled using **ESP-IDF v5.2**)
 2. Copy to folder **$your_esp_location/esp/esp-idf/components/esp_wifi/lib/esp32/** and replace older one
-3. Try compile your project now, **if it not compiling, you can try manually inject ieee80211_output.o to your existing libnet80211.a**
+3. Try compile your project now, **if it not compiling, you can try manually inject 'ieee80211_output.o' to your existing libnet80211.a**
 4. In that case download **'ieee80211_output.o'** from this repo
 5. Copy to folder **$your_esp_location/esp/esp-idf/components/esp_wifi/lib/esp32/**
 6. Run Following commands
