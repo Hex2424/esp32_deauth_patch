@@ -1,4 +1,4 @@
-## ESP32_D0WD_Q6 Deauth frame patch ESP-IDF v5.2 in LINUX (UBUNTU)
+## ESP32_D0WD_Q6 Deauth frame patch in LINUX (UBUNTU)
 # Introduction
 ESP32 chips do have a new function **esp_wifi_80211_tx()** which is used to send router raw frames.
 
